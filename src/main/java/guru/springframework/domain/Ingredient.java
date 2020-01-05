@@ -1,6 +1,7 @@
 package guru.springframework.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 public class Ingredient {
 
   @Id
@@ -25,5 +27,11 @@ public class Ingredient {
 
   @ManyToOne
   private Recipe recipe;
+
+  public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom) {
+    this.description = description;
+    this.amount = amount;
+    this.uom = uom;
+  }
 
 }
