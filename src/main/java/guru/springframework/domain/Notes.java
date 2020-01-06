@@ -1,15 +1,13 @@
 package guru.springframework.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 
 /**
  * Created by Dmytro Khomenko on 4/01/20.
  */
-@Getter
-@Setter
+@Data
 @Entity
 public class Notes {
 

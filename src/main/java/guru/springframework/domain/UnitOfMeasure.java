@@ -1,7 +1,6 @@
 package guru.springframework.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +10,7 @@ import javax.persistence.Id;
 /**
  * Created by Dmytro.Khomenko on 04.01.2020.
  */
-@Getter
-@Setter
+@Data
 @Entity
 public class UnitOfMeasure {
 

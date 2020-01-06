@@ -1,8 +1,6 @@
 package guru.springframework.domain;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -11,10 +9,8 @@ import java.util.Set;
 /**
  * Created by Dmytro Khomenko on 4/01/20.
  */
-@Getter
-@Setter
+@Data
 @Entity
-@NoArgsConstructor
 public class Recipe {
 
   @Id
