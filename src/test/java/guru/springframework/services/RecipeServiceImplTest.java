@@ -9,7 +9,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.internal.util.collections.Sets;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Set;
 
@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
  * Created by Dmytro.Khomenko on 06.01.2020.
  */
 
-@ExtendWith(SpringExtension.class)
+@ExtendWith(MockitoExtension.class)
 class RecipeServiceImplTest {
 
   @Mock
