@@ -6,6 +6,7 @@ import guru.springframework.repositories.RecipeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.internal.util.collections.Sets;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -25,6 +26,7 @@ class RecipeServiceImplTest {
   @Mock
   private RecipeRepository recipeRepository;
 
+  @InjectMocks
   private RecipeServiceImpl recipeService;
 
   Set<Recipe> recipes;
@@ -58,8 +60,8 @@ class RecipeServiceImplTest {
       .next();
 
     verify(recipeRepository, times(1)).findAll();
-    assertEquals(4L, firstRecipe.getId());
-    assertEquals("Perfect Burito", firstRecipe.getDescription());
+    assertEquals(3L, firstRecipe.getId());
+    assertEquals("Perfect Guacamole", firstRecipe.getDescription());
 
   }
 
