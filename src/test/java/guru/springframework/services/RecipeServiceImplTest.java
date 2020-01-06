@@ -3,7 +3,7 @@ package guru.springframework.services;
 import guru.springframework.domain.Difficulty;
 import guru.springframework.domain.Recipe;
 import guru.springframework.repositories.RecipeRepository;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -29,10 +29,10 @@ class RecipeServiceImplTest {
   @InjectMocks
   private RecipeServiceImpl recipeService;
 
-  Set<Recipe> recipes;
+  private static Set<Recipe> recipes;
 
-  @BeforeEach
-  void setUp() {
+  @BeforeAll
+  static void setUp() {
     Recipe recipe = new Recipe();
     recipe.setDescription("Perfect Burito");
     recipe.setPrepTime(10);
@@ -60,8 +60,8 @@ class RecipeServiceImplTest {
       .next();
 
     verify(recipeRepository, times(1)).findAll();
-    assertEquals(3L, firstRecipe.getId());
-    assertEquals("Perfect Guacamole", firstRecipe.getDescription());
+    assertEquals(Difficulty.EASY, firstRecipe.getDifficulty());
+    assertEquals(10, firstRecipe.getPrepTime());
 
   }
 
